@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- TinkerTill public site home page. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TinkerTill</title>
+  <meta name="description" content="TinkerTill helps kids and teens price their 3D prints, sell them, and keep track of their shop.">
+  <style>
+    /* TinkerTill brand tokens (src/theme/tokens.ts). Dark is the default; light follows the device. */
+    :root {
+      --navy: #0F1B2D; --navy-edge: #2A3B57; --gold: #FFC83D; --gold-light: #FFD95E; --mist: #B8C2DA;
+      --bg: #0F1B2D; --surface: #16243A; --edge: #2A3B57; --text: #FFFFFF; --muted: #B8C2DA;
+      --link: #FFD95E; --focus: #FFD95E; --step-bg: #FFD95E; --step-text: #0F1B2D;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #FFFFFF; --surface: #F2F5FB; --edge: #CBD4E6; --text: #0F1B2D; --muted: #4A5875;
+        --link: #3461D9; --focus: #3461D9; --step-bg: #FFE08A; --step-text: #0F1B2D;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px; line-height: 1.6;
+    }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+    .band { background: var(--navy); color: #FFFFFF; border-bottom: 1px solid var(--navy-edge); }
+    .band-inner { max-width: 760px; margin: 0 auto; padding: 18px 16px; display: flex; align-items: center; gap: 14px; }
+    .band svg { flex: none; }
+    .word { font-weight: 800; font-size: 26px; line-height: 1.1; }
+    .word span { color: var(--gold); }
+    .tag { color: var(--mist); font-size: 15px; }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
+    h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; font-weight: 800; }
+    h2 { font-size: 21px; margin: 36px 0 10px; font-weight: 800; }
+    h3 { font-size: 18px; margin: 22px 0 6px; font-weight: 700; }
+    p, li { max-width: 68ch; }
+    .lead { color: var(--muted); margin-top: 0; }
+    .card { background: var(--surface); border: 2px solid var(--edge); border-radius: 14px; padding: 16px 18px; margin: 14px 0; }
+    .card > :first-child { margin-top: 0; }
+    .card > :last-child { margin-bottom: 0; }
+    ol.steps { list-style: none; padding: 0; margin: 10px 0; counter-reset: step; }
+    ol.steps li { counter-increment: step; position: relative; padding: 4px 0 10px 46px; }
+    ol.steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 2px; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--step-bg); color: var(--step-text); font-weight: 800; display: grid; place-items: center;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--edge); }
+    th { font-weight: 700; }
+    .note { color: var(--muted); font-size: 15px; }
+    .toc { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 4px; }
+    .toc a {
+      display: inline-block; min-height: 48px; padding: 12px 16px; border: 2px solid var(--edge);
+      border-radius: 12px; text-decoration: none; font-weight: 700; background: var(--surface);
+    }
+    footer { border-top: 1px solid var(--edge); margin-top: 40px; padding-top: 16px; }
+    td:first-child { font-weight: 700; }
+    table.who td:first-child { font-weight: inherit; }
+    @media (max-width: 520px) {
+      th, td { display: block; padding: 4px 0; border: 0; }
+      tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--edge); }
+      table.kv thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      table.who td::before { content: attr(data-label); display: block; font-weight: 700; }
+      table.who thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <svg width="48" height="48" viewBox="0 0 512 512" aria-hidden="true">
+        <rect width="512" height="512" rx="112" fill="#0F1B2D" stroke="#2A3B57" stroke-width="10"/>
+        <g fill="#4C7DFF">
+          <rect x="238" y="72" width="36" height="66" rx="10"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(36 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(72 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(108 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(144 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(180 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(216 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(252 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(288 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(324 256 256)"/>
+        </g>
+        <circle cx="256" cy="256" r="136" fill="#FFC83D"/><circle cx="256" cy="256" r="112" fill="#FFD95E"/>
+        <circle cx="256" cy="256" r="124" fill="none" stroke="#E5A100" stroke-width="5"/>
+        <g fill="#0F1B2D">
+          <rect x="192" y="188" width="128" height="36" rx="10"/><rect x="237" y="234" width="38" height="20" rx="6"/>
+          <rect x="237" y="258" width="38" height="20" rx="6"/><rect x="237" y="282" width="38" height="20" rx="6"/>
+          <rect x="237" y="306" width="38" height="20" rx="6"/>
+        </g>
+      </svg>
+      <div>
+        <div class="word">Tinker<span>Till</span></div>
+        <div class="tag">Price it. Sell it. Keep it.</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>TinkerTill</h1>
+    <p class="lead">Price it. Sell it. Keep it. TinkerTill helps kids and teens work out what a 3D print costs to make, what to charge for it, and how their little shop is doing, with grown-ups in charge of accounts and payments.</p>
+    <nav class="toc" aria-label="Pages">
+      <a href="delete-account.html">Delete your account or data</a>
+    </nav>
+    <p class="note">The privacy policy and terms of use will be added here before TinkerTill launches.</p>
+    <footer>
+      <p>Questions? <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
+      <p class="note">TinkerTill</p>
+    </footer>
+  </main>
+</body>
+</html>
