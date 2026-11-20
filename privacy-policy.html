@@ -1,0 +1,269 @@
+<!doctype html>
+<!-- Built from docs/privacy-policy.md by site/build-pages.py. Edit that file, not this one. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TinkerTill Privacy Policy</title>
+  <meta name="description" content="What TinkerTill collects, why, and the choices parents have.">
+  <style>
+    /* TinkerTill brand tokens (src/theme/tokens.ts). Dark is the default; light follows the device. */
+    :root {
+      --navy: #0F1B2D; --navy-edge: #2A3B57; --gold: #FFC83D; --gold-light: #FFD95E; --mist: #B8C2DA;
+      --bg: #0F1B2D; --surface: #16243A; --edge: #2A3B57; --text: #FFFFFF; --muted: #B8C2DA;
+      --link: #FFD95E; --focus: #FFD95E; --step-bg: #FFD95E; --step-text: #0F1B2D;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #FFFFFF; --surface: #F2F5FB; --edge: #CBD4E6; --text: #0F1B2D; --muted: #4A5875;
+        --link: #3461D9; --focus: #3461D9; --step-bg: #FFE08A; --step-text: #0F1B2D;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px; line-height: 1.6;
+    }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+    .band { background: var(--navy); color: #FFFFFF; border-bottom: 1px solid var(--navy-edge); }
+    .band-inner { max-width: 760px; margin: 0 auto; padding: 18px 16px; display: flex; align-items: center; gap: 14px; }
+    .band svg { flex: none; }
+    .word { font-weight: 800; font-size: 26px; line-height: 1.1; }
+    .word span { color: var(--gold); }
+    .tag { color: var(--mist); font-size: 15px; }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
+    h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; font-weight: 800; }
+    h2 { font-size: 21px; margin: 36px 0 10px; font-weight: 800; }
+    h3 { font-size: 18px; margin: 22px 0 6px; font-weight: 700; }
+    p, li { max-width: 68ch; }
+    .lead { color: var(--muted); margin-top: 0; }
+    .card { background: var(--surface); border: 2px solid var(--edge); border-radius: 14px; padding: 16px 18px; margin: 14px 0; }
+    .card > :first-child { margin-top: 0; }
+    .card > :last-child { margin-bottom: 0; }
+    ol.steps { list-style: none; padding: 0; margin: 10px 0; counter-reset: step; }
+    ol.steps li { counter-increment: step; position: relative; padding: 4px 0 10px 46px; }
+    ol.steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 2px; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--step-bg); color: var(--step-text); font-weight: 800; display: grid; place-items: center;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--edge); }
+    th { font-weight: 700; }
+    .note { color: var(--muted); font-size: 15px; }
+    .toc { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 4px; }
+    .toc a {
+      display: inline-block; min-height: 48px; padding: 12px 16px; border: 2px solid var(--edge);
+      border-radius: 12px; text-decoration: none; font-weight: 700; background: var(--surface);
+    }
+    footer { border-top: 1px solid var(--edge); margin-top: 40px; padding-top: 16px; }
+    td:first-child { font-weight: 700; }
+    table.who td:first-child { font-weight: inherit; }
+    @media (max-width: 520px) {
+      th, td { display: block; padding: 4px 0; border: 0; }
+      tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--edge); }
+      table.kv thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      table.who td::before { content: attr(data-label); display: block; font-weight: 700; }
+      table.who thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <svg width="48" height="48" viewBox="0 0 512 512" aria-hidden="true">
+        <rect width="512" height="512" rx="112" fill="#0F1B2D" stroke="#2A3B57" stroke-width="10"/>
+        <g fill="#4C7DFF">
+          <rect x="238" y="72" width="36" height="66" rx="10"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(36 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(72 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(108 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(144 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(180 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(216 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(252 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(288 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(324 256 256)"/>
+        </g>
+        <circle cx="256" cy="256" r="136" fill="#FFC83D"/><circle cx="256" cy="256" r="112" fill="#FFD95E"/>
+        <circle cx="256" cy="256" r="124" fill="none" stroke="#E5A100" stroke-width="5"/>
+        <g fill="#0F1B2D">
+          <rect x="192" y="188" width="128" height="36" rx="10"/><rect x="237" y="234" width="38" height="20" rx="6"/>
+          <rect x="237" y="258" width="38" height="20" rx="6"/><rect x="237" y="282" width="38" height="20" rx="6"/>
+          <rect x="237" y="306" width="38" height="20" rx="6"/>
+        </g>
+      </svg>
+      <div>
+        <div class="word">Tinker<span>Till</span></div>
+        <div class="tag">Price it. Sell it. Keep it.</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+<h1 id="tinkertill-privacy-policy">TinkerTill Privacy Policy</h1>
+
+<p><strong>Effective date:</strong> November 20, 2026</p>
+
+<p>TinkerTill helps kids and teens work out what a 3D print costs to make and what to charge for it. It's made for young makers and their families, so we collect as little as we can and never sell it.</p>
+
+<p>This policy explains what TinkerTill collects, why, and the choices parents have. If anything is unclear, contact us at <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a>.</p>
+
+<p><strong>Who we are:</strong> TinkerTill is made by Sommer Salem, doing business as TinkerTill, in Cordova, Tennessee, United States ("we", "us"). Contact details are at the end of this policy.</p>
+
+<h2 id="the-short-version">The short version</h2>
+
+<ul>
+<li><strong>You can use TinkerTill's price calculator without an account.</strong> What you enter stays on your device.</li>
+<li><strong>Only parents and guardians (18+) create accounts.</strong> Kids never give us an email, password, birthday, photo or location.</li>
+<li><strong>We don't show ads, track anyone for ads, or sell or rent anyone's information.</strong></li>
+<li><strong>Parents are in charge.</strong> They can see, download or delete their family's information at any time.</li>
+</ul>
+
+<h2 id="1-using-tinkertill-without-an-account">1. Using TinkerTill without an account</h2>
+
+<p>Without an account, TinkerTill is a price calculator. What you type is stored <strong>only on your device</strong>: the print you're pricing, spools, add-ons, settings, the chosen currency, and a scrambled (hashed) version of the parent PIN. We don't receive any of it. Deleting the app deletes it.</p>
+
+<h2 id="2-parent-accounts">2. Parent accounts</h2>
+
+<p>A parent or guardian can create an account and subscribe to save prints, run the shop (orders, sales and stock), add kid profiles, and use TinkerTill on more than one device.</p>
+
+<p><strong>What we collect from the parent:</strong></p>
+
+<ul>
+<li>Email address and password. The password is handled by our sign-in provider and stored only in hashed form; we can't see it.</li>
+<li>The family's settings: currency, and a hashed parent PIN.</li>
+<li>If you invite a second parent or guardian, their email address, so we can send the invite.</li>
+<li>If you subscribe: whether your subscription is active. Payments go through Apple, Google or Stripe, and we never see your card details.</li>
+</ul>
+
+<p><strong>What we collect about kids (through the parent's account):</strong></p>
+
+<ul>
+<li>A first name or nickname for each kid profile (up to 3), and an optional hashed 4-digit kid PIN.</li>
+<li>What each kid makes in the app: print names, colors, grams, times, prices, spools, add-ons, sales, orders, and any store or model-site links they paste.</li>
+</ul>
+
+<p><strong>What we never collect from kids:</strong> email, phone number, home address, birthday, photos, voice, precise location, contacts, or advertising IDs.</p>
+
+<h3 id="orders-and-customers">Orders and customers</h3>
+
+<p>Orders ask "Who's it for?" (a first name or nickname) and allow an optional note. The app asks kids not to type phone numbers or addresses there. Parents can edit or delete orders at any time.</p>
+
+<h2 id="3-how-we-use-information">3. How we use information</h2>
+
+<p>We use it only to:</p>
+
+<ul>
+<li>run the app and keep each family's information in sync across their devices;</li>
+<li>let parents sign in, reset passwords, and invite a second parent;</li>
+<li>check whether a subscription is active;</li>
+<li>keep the service secure and fix problems;</li>
+<li>reply when you contact us.</li>
+</ul>
+
+<p>We don't use it for advertising, and we don't build profiles of kids.</p>
+
+<h2 id="4-who-we-share-it-with">4. Who we share it with</h2>
+
+<p>We don't sell, rent or trade anyone's information. We share it only with service providers that help run TinkerTill, who may use it only for that:</p>
+
+<ul>
+<li><strong>Supabase</strong> stores account and app data and handles sign-in. Data is kept in the United States.</li>
+<li><strong>Apple App Store / Google Play</strong> process subscription payments under their own privacy policies.</li>
+<li><strong>RevenueCat</strong> keeps track of whether the family has the Family plan. It receives a family identifier and the purchase status, not kids' names or app data.</li>
+<li><strong>Stripe</strong> processes Family plan payments made on the web. We never see full card numbers.</li>
+</ul>
+
+<p>We may also share information if the law requires it, or to protect someone's safety.</p>
+
+<p>When TinkerTill opens a store or model-site link (for example Etsy or MakerWorld), you leave the app, and that website's own privacy policy applies.</p>
+
+<h2 id="5-children-s-privacy-coppa">5. Children's privacy (COPPA)</h2>
+
+<p>TinkerTill is made for kids and teens, and we follow the US Children's Online Privacy Protection Act (COPPA):</p>
+
+<ul>
+<li>Kids under 13 never create their own accounts. A parent or guardian creates the account, adds the kid profiles, and agrees to this policy for their family. That is how a parent gives consent.</li>
+<li>We collect only what's needed for the app to work (see section 2).</li>
+<li>Parents can review, change, download or delete their kids' information at any time in Grown-up settings, or by emailing <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a>. A parent can also tell us to stop collecting more information about their kid, which means deleting that kid's profile.</li>
+<li>If we learn that we collected personal information from a kid under 13 without a parent's consent, we will delete it.</li>
+</ul>
+
+<h2 id="6-how-long-we-keep-it">6. How long we keep it</h2>
+
+<ul>
+<li>On your device: until you delete it or the app.</li>
+<li>In a parent account: until the parent deletes it or the account. When a family is deleted, its kid profiles and all their app data are deleted too, within 30 days, including from backups.</li>
+<li>If an account isn't used for 24 months, we may email the parent and then delete it.</li>
+<li>Payment records for Family plans bought on our website are kept for 7 years, the longest time US tax rules usually require. Apple, Google and Stripe keep their own purchase records.</li>
+<li>When you ask us to delete data, we keep a short note that the request happened (not your app data) for 24 months, to show we did it.</li>
+</ul>
+
+<p>How to delete: see <a href="https://sumr415.github.io/tinkertill-site/delete-account.html">our account and data deletion page</a>.</p>
+
+<h2 id="7-parents-choices-and-rights">7. Parents' choices and rights</h2>
+
+<p>In Grown-up settings, or by emailing <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a>, a parent can:</p>
+
+<ul>
+<li>see and download the family's information;</li>
+<li>correct or delete any of it;</li>
+<li>delete a kid profile or the whole family account;</li>
+<li>remove a second parent or guardian.</li>
+</ul>
+
+<p>If you live where local laws give you more rights, such as the EU or UK (GDPR), or California (CCPA/CPRA), you can use those rights the same way. We'll answer within 30 days.</p>
+
+<h2 id="8-families-in-the-eu-uk-and-eea-gdpr">8. Families in the EU, UK and EEA (GDPR)</h2>
+
+<p>If you live in the European Union, the European Economic Area or the United Kingdom, the GDPR (or UK GDPR) gives you these protections too.</p>
+
+<p><strong>Who's responsible:</strong> Sommer Salem, doing business as TinkerTill, is the "controller" of your family's information. Contact: <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a>.</p>
+
+<p><strong>Why we're allowed to use it (legal bases):</strong></p>
+
+<table class="kv">
+<thead><tr><th scope="col">What</th><th scope="col">Why</th></tr></thead>
+<tbody>
+<tr><td>Running your parent account, kid profiles, syncing and the Family plan</td><td>To provide the service you asked for (contract)</td></tr>
+<tr><td>Kids' first names or nicknames and what they make in TinkerTill</td><td>The parent's consent, given when they add the kid profile</td></tr>
+<tr><td>Keeping TinkerTill secure and fixing problems</td><td>Our legitimate interest in a safe, working app</td></tr>
+<tr><td>Keeping payment records</td><td>Legal obligations (tax and accounting)</td></tr>
+</tbody>
+</table>
+
+<p><strong>Kids and parental consent:</strong> only parents and guardians (18+) make accounts and add kids. In EU countries, a parent's consent is needed for kids under that country's "digital age of consent" (between 13 and 16, depending on the country). Because every TinkerTill account belongs to a parent, this consent is covered for kids of any age. A parent can take consent back at any time by deleting a kid profile.</p>
+
+<p><strong>Your rights:</strong> to see, correct, download (portability), delete, or limit the use of your family's information, to object to how we use it, and to take back consent. Most of these are in Grown-up settings → Family data. For the rest, email <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a>. We'll answer within one month.</p>
+
+<p><strong>Complaints:</strong> you can complain to your local data protection authority (in the UK, the Information Commissioner's Office). We'd appreciate the chance to fix things first.</p>
+
+<p><strong>Where your information is kept:</strong> with Supabase in the United States. Transfers from the EU and UK are protected by the European Commission's Standard Contractual Clauses (and the UK addendum) in our service providers' data processing terms.</p>
+
+<p><strong>No automated decisions:</strong> we don't make decisions about you or your kids using profiling or automated decision-making.</p>
+
+<h2 id="9-security">9. Security</h2>
+
+<ul>
+<li>Every family can only reach its own information. This is enforced in our database, not just in the app.</li>
+<li>Data is encrypted while it travels and while it's stored by our provider.</li>
+<li>PINs and passwords are stored only in hashed form.</li>
+<li>No system is perfectly secure. If a breach affects your family's information, we'll tell you as the law requires.</li>
+</ul>
+
+<h2 id="10-changes-to-this-policy">10. Changes to this policy</h2>
+
+<p>If we change this policy, we'll update the date at the top. If a change affects what we collect from kids or how we use it, we'll tell parents in the app or by email first and ask for consent again where the law requires it.</p>
+
+<h2 id="11-contact-us">11. Contact us</h2>
+
+<p>Sommer Salem, doing business as TinkerTill<br>
+2101 Littlemore Dr, Cordova, TN 38016, United States<br>
+Phone: (901) 295-9550<br>
+Email: <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
+
+<footer>
+<p><a href="index.html">TinkerTill home</a> · <a href="delete-account.html">Delete your account or data</a></p>
+<p class="note">Questions? <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
+</footer>
+  </main>
+</body>
+</html>
