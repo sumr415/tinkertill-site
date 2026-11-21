@@ -1,0 +1,271 @@
+<!doctype html>
+<!-- Built from docs/terms-of-use.md by site/build-pages.py. Edit that file, not this one. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TinkerTill Terms of Use</title>
+  <meta name="description" content="The rules for using TinkerTill, the Family plan, and how to cancel.">
+  <style>
+    /* TinkerTill brand tokens (src/theme/tokens.ts). Dark is the default; light follows the device. */
+    :root {
+      --navy: #0F1B2D; --navy-edge: #2A3B57; --gold: #FFC83D; --gold-light: #FFD95E; --mist: #B8C2DA;
+      --bg: #0F1B2D; --surface: #16243A; --edge: #2A3B57; --text: #FFFFFF; --muted: #B8C2DA;
+      --link: #FFD95E; --focus: #FFD95E; --step-bg: #FFD95E; --step-text: #0F1B2D;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #FFFFFF; --surface: #F2F5FB; --edge: #CBD4E6; --text: #0F1B2D; --muted: #4A5875;
+        --link: #3461D9; --focus: #3461D9; --step-bg: #FFE08A; --step-text: #0F1B2D;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px; line-height: 1.6;
+    }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+    .band { background: var(--navy); color: #FFFFFF; border-bottom: 1px solid var(--navy-edge); }
+    .band-inner { max-width: 760px; margin: 0 auto; padding: 18px 16px; display: flex; align-items: center; gap: 14px; }
+    .band svg { flex: none; }
+    .word { font-weight: 800; font-size: 26px; line-height: 1.1; }
+    .word span { color: var(--gold); }
+    .tag { color: var(--mist); font-size: 15px; }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
+    h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; font-weight: 800; }
+    h2 { font-size: 21px; margin: 36px 0 10px; font-weight: 800; }
+    h3 { font-size: 18px; margin: 22px 0 6px; font-weight: 700; }
+    p, li { max-width: 68ch; }
+    .lead { color: var(--muted); margin-top: 0; }
+    .card { background: var(--surface); border: 2px solid var(--edge); border-radius: 14px; padding: 16px 18px; margin: 14px 0; }
+    .card > :first-child { margin-top: 0; }
+    .card > :last-child { margin-bottom: 0; }
+    ol.steps { list-style: none; padding: 0; margin: 10px 0; counter-reset: step; }
+    ol.steps li { counter-increment: step; position: relative; padding: 4px 0 10px 46px; }
+    ol.steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 2px; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--step-bg); color: var(--step-text); font-weight: 800; display: grid; place-items: center;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--edge); }
+    th { font-weight: 700; }
+    .note { color: var(--muted); font-size: 15px; }
+    .toc { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 4px; }
+    .toc a {
+      display: inline-block; min-height: 48px; padding: 12px 16px; border: 2px solid var(--edge);
+      border-radius: 12px; text-decoration: none; font-weight: 700; background: var(--surface);
+    }
+    footer { border-top: 1px solid var(--edge); margin-top: 40px; padding-top: 16px; }
+    td:first-child { font-weight: 700; }
+    table.who td:first-child { font-weight: inherit; }
+    @media (max-width: 520px) {
+      th, td { display: block; padding: 4px 0; border: 0; }
+      tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--edge); }
+      table.kv thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      table.who td::before { content: attr(data-label); display: block; font-weight: 700; }
+      table.who thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <svg width="48" height="48" viewBox="0 0 512 512" aria-hidden="true">
+        <rect width="512" height="512" rx="112" fill="#0F1B2D" stroke="#2A3B57" stroke-width="10"/>
+        <g fill="#4C7DFF">
+          <rect x="238" y="72" width="36" height="66" rx="10"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(36 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(72 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(108 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(144 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(180 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(216 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(252 256 256)"/>
+          <rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(288 256 256)"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(324 256 256)"/>
+        </g>
+        <circle cx="256" cy="256" r="136" fill="#FFC83D"/><circle cx="256" cy="256" r="112" fill="#FFD95E"/>
+        <circle cx="256" cy="256" r="124" fill="none" stroke="#E5A100" stroke-width="5"/>
+        <g fill="#0F1B2D">
+          <rect x="192" y="188" width="128" height="36" rx="10"/><rect x="237" y="234" width="38" height="20" rx="6"/>
+          <rect x="237" y="258" width="38" height="20" rx="6"/><rect x="237" y="282" width="38" height="20" rx="6"/>
+          <rect x="237" y="306" width="38" height="20" rx="6"/>
+        </g>
+      </svg>
+      <div>
+        <div class="word">Tinker<span>Till</span></div>
+        <div class="tag">Price it. Sell it. Keep it.</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+<h1 id="tinkertill-terms-of-use">TinkerTill Terms of Use</h1>
+
+<p><strong>Effective date:</strong> November 20, 2026</p>
+
+<p>These terms are the rules for using TinkerTill. TinkerTill is made by Sommer Salem, doing business as TinkerTill, in Memphis, Tennessee, United States ("we", "us"). By using TinkerTill, you agree to them. If you're a kid, please read them with a parent or guardian.</p>
+
+<p>Our <a href="https://sumr415.github.io/tinkertill-site/privacy-policy.html">privacy policy</a> explains what information we keep and how. It's part of these terms.</p>
+
+<h2 id="for-kids-the-rules-in-short">For kids: the rules in short</h2>
+
+<ul>
+<li>Use TinkerTill with a grown-up's OK, and ask them before you sell anything.</li>
+<li>Be kind and honest. Don't use TinkerTill to trick, bully or hurt anyone.</li>
+<li>Don't type phone numbers, home addresses or other private things into names or notes.</li>
+<li>Only grown-ups can pay, change settings, or open links outside the app.</li>
+<li>If something in TinkerTill seems wrong or unsafe, tell a grown-up. They can tell us using <strong>Help and report a problem</strong> in Grown-up settings.</li>
+<li>If someone breaks these rules, we might remove what they added or pause their family's account. We'll tell the grown-up why.</li>
+</ul>
+
+<h2 id="the-short-version">The short version</h2>
+
+<ul>
+<li><strong>Anyone can use the price calculator for free,</strong> with no account.</li>
+<li><strong>Only grown-ups (18+) make accounts and pay.</strong> Kids use TinkerTill through their parent's account.</li>
+<li><strong>The Family plan renews automatically</strong> until you cancel. You can cancel any time.</li>
+<li><strong>TinkerTill's prices are suggestions.</strong> You decide what to charge, and you're responsible for your own sales.</li>
+<li><strong>What you make in TinkerTill is yours.</strong></li>
+</ul>
+
+<h2 id="1-who-can-use-tinkertill">1. Who can use TinkerTill</h2>
+
+<ul>
+<li><strong>Kids and teens</strong> can use TinkerTill with a parent's or guardian's permission and help.</li>
+<li><strong>Parent accounts</strong> are only for adults 18 or older. A parent or guardian who makes an account agrees to these terms for their whole family, including the kid profiles they add, and is responsible for how the family uses TinkerTill.</li>
+<li><strong>Keep your account safe:</strong> don't share your password, and set a parent PIN so kids can't change grown-up settings or buy anything. Tell us at <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a> if you think someone else is using your account.</li>
+</ul>
+
+<h2 id="2-free-features-and-the-family-plan">2. Free features and the Family plan</h2>
+
+<p><strong>Free, no account:</strong> the Price it calculator, including filament, add-on and cost settings, and currency.</p>
+
+<p><strong>Family plan (needs a parent account):</strong> saving prints and My prints, My shop (sales report, orders and invoices, stock), up to 3 kid profiles, a second grown-up, and syncing between devices.</p>
+
+<h3 id="prices-and-free-trial">Prices and free trial</h3>
+
+<ul>
+<li><strong>$2.99 per month</strong> or <strong>$29.99 per year</strong> (US dollars). Prices in other countries are set by the app store and may include local taxes.</li>
+<li><strong>New families get a 1-month free trial.</strong> If you don't cancel at least 24 hours before the trial ends, the plan you picked starts and you're charged.</li>
+</ul>
+
+<h3 id="automatic-renewal-and-cancelling">Automatic renewal and cancelling</h3>
+
+<ul>
+<li>The Family plan <strong>renews automatically</strong> at the end of each month or year, at the price shown when you subscribed, until you cancel.</li>
+<li><strong>Cancel any time:</strong>
+<ul>
+<li><strong>iPhone or iPad:</strong> Settings → your name → Subscriptions.</li>
+<li><strong>Android:</strong> Google Play → Payments &amp; subscriptions → Subscriptions.</li>
+<li><strong>Web:</strong> use <strong>Manage subscription</strong> in TinkerTill's Grown-up settings.</li>
+</ul></li>
+<li>Cancel at least 24 hours before the renewal date to avoid the next charge. When you cancel, the plan keeps working until the end of the period you already paid for.</li>
+<li><strong>Price changes:</strong> we'll tell you before a new price applies. Apple and Google may also ask you to agree to it, and you can cancel instead.</li>
+</ul>
+
+<h3 id="cancelling-within-14-days-eu-uk-and-similar-countries">Cancelling within 14 days (EU, UK and similar countries)</h3>
+
+<p>If you live in the European Union, the United Kingdom, or another country that gives a cooling-off period for online purchases:</p>
+
+<ul>
+<li><strong>App Store and Google Play:</strong> Apple and Google handle your right to cancel under their own rules.</li>
+<li><strong>Web (Stripe):</strong> you normally have 14 days to cancel a purchase. Because the Family plan starts right away, at checkout we'll ask you to agree that it starts immediately and that you lose this 14-day right once it does. If you cancel within 14 days without having agreed to that, we'll refund you as your local law requires. The free trial doesn't use up your 14 days.</li>
+</ul>
+
+<h3 id="refunds">Refunds</h3>
+
+<ul>
+<li><strong>App Store</strong> and <strong>Google Play</strong> purchases are refunded by Apple or Google under their own refund rules. Ask them directly.</li>
+<li><strong>Web</strong> purchases: payments aren't refunded, including for part of a month or year. You can cancel any time to stop the next charge, and the plan keeps working until the end of the period you paid for. This doesn't take away any refund rights your local law gives you (see "Cancelling within 14 days" above), and if you think you were charged by mistake, email <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a> and we'll look into it.</li>
+</ul>
+
+<h3 id="when-a-plan-ends">When a plan ends</h3>
+
+<p>Nothing is deleted. Your prints, orders, sales and kid profiles are kept, but saving, My prints, My shop and syncing lock until you subscribe again. The calculator keeps working. Data from families who stop using TinkerTill is kept and deleted as our privacy policy says.</p>
+
+<h2 id="3-tinkertill-s-numbers-are-estimates">3. TinkerTill's numbers are estimates</h2>
+
+<p>TinkerTill helps you estimate what a print costs and suggests prices. The numbers depend on what you type in, such as grams, spool prices, electricity and your time, and are <strong>estimates, not advice</strong>. We don't promise any price will sell or earn a profit.</p>
+
+<p><strong>You're responsible for your own selling.</strong> That includes the prices you charge, any taxes, any permits, the rules of the places where you sell (like Etsy or a school), and the safety and quality of what you make. Kids should sell with a grown-up's help.</p>
+
+<h2 id="4-your-stuff">4. Your stuff</h2>
+
+<ul>
+<li><strong>What you make in TinkerTill is yours:</strong> print names, prices, orders, notes and links.</li>
+<li>To run TinkerTill, you let us store, copy and show that information back to you and your family on your devices. We use it only to provide TinkerTill, as the privacy policy describes.</li>
+<li><strong>Only add what you have the right to,</strong> and don't put personal details like phone numbers or home addresses in names or notes.</li>
+</ul>
+
+<h2 id="5-things-you-can-t-do">5. Things you can't do</h2>
+
+<ul>
+<li>Break the law, or use TinkerTill to harm, bully or cheat anyone.</li>
+<li>Get into anyone else's account or family, or try to get around the parent PIN or the Family plan.</li>
+<li>Interfere with TinkerTill's servers or security, copy the app to make a competing one, or scrape it.</li>
+<li>Use TinkerTill to sell things that are illegal or unsafe.</li>
+</ul>
+
+<h3 id="how-we-handle-rule-breaking">How we handle rule-breaking</h3>
+
+<ul>
+<li><strong>We don't read your family's data</strong> to look for problems. Families' prints, orders and notes are private to them. We only act when someone reports a problem, when the law requires it, or when we need to keep TinkerTill working and safe.</li>
+<li><strong>What we might do:</strong> remove the content that breaks the rules, pause a feature, or suspend or close the account. We pick the smallest step that fixes the problem. People decide; we don't use automated tools to judge content.</li>
+<li><strong>We tell you why.</strong> If we remove something or limit an account, we'll email the parent with what we did, which rule or law it was about, and how to disagree, unless the law doesn't allow us to.</li>
+<li><strong>Disagreeing:</strong> reply to that email, and a person will look again. If we got it wrong, we'll undo it.</li>
+</ul>
+
+<h2 id="6-reporting-a-problem-or-illegal-content">6. Reporting a problem or illegal content</h2>
+
+<p>You can tell us about anything in TinkerTill you think is illegal, unsafe or against these terms, or about a problem with the app:</p>
+
+<ul>
+<li><strong>In the app:</strong> Grown-up settings → <strong>Help and report a problem</strong> (this opens an email to us).</li>
+<li><strong>By email:</strong> <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a>, with "Report" in the subject.</li>
+</ul>
+
+<p>Please include what the problem is, where you saw it, why you think it's illegal or against the rules, and your name and email so we can reply (you don't need to give your name if you're reporting child sexual abuse material). We'll confirm we got it, look at it carefully and fairly, and tell you what we decided. If it might put someone in danger, we'll act right away and contact the authorities where the law requires it.</p>
+
+<h2 id="7-links-to-other-websites">7. Links to other websites</h2>
+
+<p>TinkerTill can open links you save, for example to Etsy, MakerWorld or Printables, after a grown-up types the parent PIN. Those sites aren't ours; their own terms and privacy policies apply. We're not responsible for them.</p>
+
+<h2 id="8-changes-and-ending">8. Changes and ending</h2>
+
+<ul>
+<li>We may improve, change or stop features. If we stop the Family plan, we'll tell you and give a pro-rated refund for time you paid for but can't use, where the law requires it.</li>
+<li>You can stop using TinkerTill and delete your account any time (Grown-up settings → Family data → Delete my account).</li>
+<li>We may suspend or close an account that breaks these terms. Where we can, we'll tell you first and give you a chance to download your data.</li>
+</ul>
+
+<h2 id="9-no-warranties">9. No warranties</h2>
+
+<p>TinkerTill is provided <strong>"as is."</strong> We work hard to keep it accurate and available, but we can't promise it will always work, be error-free, or keep every piece of data forever. Keep your own records of important sales and orders. You can download your family's data any time.</p>
+
+<h2 id="10-limits-on-our-responsibility">10. Limits on our responsibility</h2>
+
+<p>As far as the law allows, we aren't responsible for indirect losses, lost profits, or lost data from using TinkerTill. Our total responsibility for any claim is limited to what you paid us for TinkerTill in the 12 months before the claim. Some places don't allow these limits, so they may not apply to you.</p>
+
+<h2 id="11-disagreements">11. Disagreements</h2>
+
+<p>If there's a problem, please contact us first at <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a> and we'll try to fix it. These terms are governed by the laws of the State of Tennessee, United States, except where your local consumer laws give you more rights. Any dispute that we can't settle together will be handled by the state or federal courts in Shelby County, Tennessee, unless your local law lets you bring it where you live. You can also use small-claims court if your claim qualifies.</p>
+
+<h2 id="12-changes-to-these-terms">12. Changes to these terms</h2>
+
+<p>If we change these terms, we'll update the date at the top. For important changes, especially to prices or what's included, we'll tell parents in the app or by email first. If you keep using TinkerTill after that, the new terms apply.</p>
+
+<h2 id="13-contact-us">13. Contact us</h2>
+
+<p>Sommer Salem, doing business as TinkerTill<br>
+2298 Young Ave, Memphis, TN 38104, United States<br>
+Phone: (901) 295-9550<br>
+Email: <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
+
+<p><strong>For EU users and authorities (Digital Services Act):</strong> our single point of contact is <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a>. You can write to us in English.</p>
+
+<footer>
+<p><a href="index.html">TinkerTill home</a> · <a href="privacy-policy.html">Privacy policy</a> · <a href="terms-of-use.html">Terms of use</a> · <a href="delete-account.html">Delete your account or data</a></p>
+<p class="note">Questions? <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
+</footer>
+  </main>
+</body>
+</html>
