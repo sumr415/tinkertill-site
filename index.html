@@ -110,5 +110,15 @@
       <p class="note">TinkerTill</p>
     </footer>
   </main>
+<script>
+  // Email links that land here by mistake (old Site URL) go on to the right page, keeping the link details.
+  (function () {
+    var h = location.hash;
+    if (/(^|[#&])(access_token|error)=/.test(h)) {
+      var page = /[#&]type=recovery(&|$)/.test(h) ? 'reset-password.html' : 'confirmed.html';
+      location.replace(page + h);
+    }
+  })();
+</script>
 </body>
 </html>

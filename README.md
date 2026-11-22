@@ -8,6 +8,8 @@ The public web pages for the TinkerTill app, served with GitHub Pages at
 | Delete your account or data | https://sumr415.github.io/tinkertill-site/delete-account.html | Google Play: Delete account URL |
 | Delete only some data | https://sumr415.github.io/tinkertill-site/delete-account.html#delete-data | Google Play: Delete data URL |
 | Privacy policy | https://sumr415.github.io/tinkertill-site/privacy-policy.html | Google Play and App Store privacy policy link |
+| Email confirmed | https://sumr415.github.io/tinkertill-site/confirmed.html | Supabase Site URL; the sign-up email link lands here |
+| Choose a new password | https://sumr415.github.io/tinkertill-site/reset-password.html | Supabase Redirect URL; the password-reset email link lands here |
 | Terms of use | https://sumr415.github.io/tinkertill-site/terms.html | Coming once they're final |
 
 The app's code is in a separate, private repository. These pages are edited there first (in its `site/`
