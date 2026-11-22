@@ -1,85 +1,181 @@
 <!doctype html>
-<!-- TinkerTill public site home page. -->
+<!-- TinkerTill public site home page: what TinkerTill does, with screenshots, and a way into the web app. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
-  <title>TinkerTill</title>
-  <meta name="description" content="TinkerTill helps kids and teens price their 3D prints, sell them, and keep track of their shop.">
+  <title>TinkerTill: 3D print pricing for young makers</title>
+  <meta name="description" content="TinkerTill helps kids and teens who 3D print work out what each print costs to make, what to charge, and how their little shop is doing. Free to price prints, right in your browser.">
+  <meta property="og:title" content="TinkerTill: Price it. Sell it. Keep it.">
+  <meta property="og:description" content="3D print pricing for kids and teens, with grown-ups in charge.">
+  <meta property="og:image" content="https://tinkertill.com/images/app-price.jpg">
+  <meta name="theme-color" content="#0F1B2D">
+  <script>
+    // Email links that land here by mistake (old Site URL) go on to the right page, keeping the link details.
+    (function () {
+      var h = location.hash;
+      if (/(^|[#&])(access_token|error)=/.test(h)) {
+        var page = /[#&]type=recovery(&|$)/.test(h) ? 'reset-password.html' : 'confirmed.html';
+        location.replace(page + h);
+      }
+    })();
+  </script>
   <style>
+    @font-face { font-family: Montserrat; font-weight: 500; font-display: swap; src: url(fonts/montserrat-500.woff2) format("woff2"); }
+    @font-face { font-family: Montserrat; font-weight: 700; font-display: swap; src: url(fonts/montserrat-700.woff2) format("woff2"); }
+    @font-face { font-family: Montserrat; font-weight: 800; font-display: swap; src: url(fonts/montserrat-800.woff2) format("woff2"); }
+
     /* TinkerTill brand tokens (src/theme/tokens.ts). Dark is the default; light follows the device. */
     :root {
-      --navy: #0F1B2D; --navy-edge: #2A3B57; --gold: #FFC83D; --gold-light: #FFD95E; --mist: #B8C2DA;
+      --navy: #0F1B2D; --navy-edge: #2A3B57; --blue: #4C7DFF; --gold: #FFC83D; --gold-light: #FFD95E; --gold-deep: #E5A100;
+      --mist: #B8C2DA; --white: #FFFFFF;
       --bg: #0F1B2D; --surface: #16243A; --edge: #2A3B57; --text: #FFFFFF; --muted: #B8C2DA;
-      --link: #FFD95E; --focus: #FFD95E; --step-bg: #FFD95E; --step-text: #0F1B2D; --btn-bg: #3461D9;
+      --link: #FFD95E; --focus: #FFD95E; --btn-bg: #3461D9; --money: #FFC83D; --money-bg: transparent;
+      --good: #27AE60; --hero-bg: #0F1B2D; --soft: #1B2C48;
     }
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #FFFFFF; --surface: #F2F5FB; --edge: #CBD4E6; --text: #0F1B2D; --muted: #4A5875;
-        --link: #3461D9; --focus: #3461D9; --step-bg: #FFE08A; --step-text: #0F1B2D; --btn-bg: #3461D9;
+        --link: #3461D9; --focus: #3461D9; --btn-bg: #3461D9; --money: #0F1B2D; --money-bg: #FFE08A;
+        --good: #1B7A43; --soft: #E8EEF9;
       }
     }
     * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
       margin: 0; background: var(--bg); color: var(--text);
       font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 17px; line-height: 1.6;
+      font-weight: 500; font-size: 17px; line-height: 1.6;
     }
+    img { max-width: 100%; height: auto; display: block; }
     a { color: var(--link); text-underline-offset: 3px; }
-    a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
-    .band { background: var(--navy); color: #FFFFFF; border-bottom: 1px solid var(--navy-edge); }
-    .band-inner { max-width: 760px; margin: 0 auto; padding: 18px 16px; display: flex; align-items: center; gap: 14px; }
-    .band svg { flex: none; }
-    .word { font-weight: 800; font-size: 26px; line-height: 1.1; }
+    a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    .skip { position: absolute; left: -999px; top: 8px; background: var(--white); color: var(--navy); padding: 10px 14px; border-radius: 10px; font-weight: 700; z-index: 10; }
+    .skip:focus { left: 8px; }
+
+    /* Brand band: always navy, so "Till" is always the bright gold. */
+    .band { background: var(--navy); color: var(--white); border-bottom: 1px solid var(--navy-edge); }
+    .band .wrap { display: flex; align-items: center; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--white); text-decoration: none; margin-right: auto; }
+    .brand svg { flex: none; }
+    .word { font-weight: 800; font-size: 24px; line-height: 1.1; }
     .word span { color: var(--gold); }
-    .tag { color: var(--mist); font-size: 15px; }
-    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 56px; }
-    h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; font-weight: 800; }
-    h2 { font-size: 21px; margin: 36px 0 10px; font-weight: 800; }
-    h3 { font-size: 18px; margin: 22px 0 6px; font-weight: 700; }
-    p, li { max-width: 68ch; }
-    .lead { color: var(--muted); margin-top: 0; }
-    .card { background: var(--surface); border: 2px solid var(--edge); border-radius: 14px; padding: 16px 18px; margin: 14px 0; }
-    .card > :first-child { margin-top: 0; }
-    .card > :last-child { margin-bottom: 0; }
-    ol.steps { list-style: none; padding: 0; margin: 10px 0; counter-reset: step; }
-    ol.steps li { counter-increment: step; position: relative; padding: 4px 0 10px 46px; }
-    ol.steps li::before {
-      content: counter(step); position: absolute; left: 0; top: 2px; width: 32px; height: 32px; border-radius: 50%;
-      background: var(--step-bg); color: var(--step-text); font-weight: 800; display: grid; place-items: center;
+    .tag { color: var(--mist); font-size: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px;
+      border-radius: 14px; font-weight: 800; font-size: 19px; text-decoration: none; border: 2px solid transparent;
     }
-    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-    th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--edge); }
-    th { font-weight: 700; }
-    .note { color: var(--muted); font-size: 15px; }
-    .toc { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 4px; }
-    .toc a {
-      display: inline-block; min-height: 48px; padding: 12px 16px; border: 2px solid var(--edge);
-      border-radius: 12px; text-decoration: none; font-weight: 700; background: var(--surface);
+    .btn.primary { background: var(--btn-bg); color: var(--white); }
+    .btn.primary:hover { background: #2B53C2; }
+    .btn.ghost { color: var(--white); border-color: var(--mist); }
+    .btn.ghost:hover { border-color: var(--white); }
+    .band .btn { min-height: 44px; padding: 8px 16px; font-size: 19px; }
+    .btn:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+
+    /* Hero: navy in both themes, like the app's brand band. */
+    .hero { background: radial-gradient(ellipse at 75% 40%, #1B2C48 0%, #0F1B2D 65%); color: var(--white); overflow: hidden; position: relative; }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; padding-top: 56px; padding-bottom: 64px; position: relative; }
+    .hero h1 { font-weight: 800; font-size: clamp(34px, 5vw, 54px); line-height: 1.1; letter-spacing: -0.5px; margin: 0 0 16px; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero .lead { font-size: 19px; color: var(--mist); margin: 0 0 26px; max-width: 34em; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero .note { color: var(--mist); font-size: 15px; margin: 16px 0 0; }
+    .layers { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 7px; opacity: .5; pointer-events: none; }
+    .layers i { display: block; height: 9px; border-radius: 5px; background: var(--navy-edge); }
+    .phones { position: relative; display: flex; justify-content: center; min-height: 420px; }
+    .phone { width: 270px; border: 3px solid var(--navy-edge); border-radius: 32px; overflow: hidden; background: var(--navy); box-shadow: 0 18px 50px rgba(0,0,0,.5); }
+    .phones .phone.back { position: absolute; width: 230px; right: calc(50% + 40px); top: 40px; opacity: .9; transform: rotate(-6deg); }
+    .phones .phone.front { position: relative; transform: rotate(3deg); margin-left: 120px; }
+
+    section { padding: 64px 0; }
+    section.alt { background: var(--surface); border-top: 1px solid var(--edge); border-bottom: 1px solid var(--edge); }
+    h2 { font-weight: 800; font-size: clamp(28px, 3.6vw, 38px); line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.3px; }
+    h3 { font-weight: 800; font-size: 21px; margin: 0 0 6px; }
+    .intro { color: var(--muted); font-size: 19px; max-width: 40em; margin: 0 0 32px; }
+    .kicker { display: inline-block; font-weight: 800; font-size: 15px; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+
+    /* Price it / Sell it / Keep it */
+    .step { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 28px 0; }
+    .step + .step { border-top: 1px solid var(--edge); }
+    .step .shot { display: flex; justify-content: center; }
+    .step:nth-of-type(even) .shot { order: -1; }
+    .step .phone { width: 280px; }
+    .step h2 em { font-style: normal; color: var(--link); }
+    ul.ticks { list-style: none; padding: 0; margin: 16px 0 0; }
+    ul.ticks li { position: relative; padding: 6px 0 6px 36px; }
+    ul.ticks li::before {
+      content: "✓"; position: absolute; left: 0; top: 7px; width: 26px; height: 26px; border-radius: 50%;
+      background: var(--good); color: var(--white); font-weight: 800; font-size: 15px; display: grid; place-items: center; line-height: 1;
     }
-    .open {
-      display: inline-flex; align-items: center; min-height: 56px; padding: 14px 24px; margin: 8px 0 6px;
-      border-radius: 14px; background: var(--btn-bg); color: #FFFFFF; font-weight: 800; font-size: 19px; text-decoration: none;
+    .money { color: var(--money); background: var(--money-bg); font-weight: 800; padding: 0 4px; border-radius: 4px; font-variant-numeric: tabular-nums; }
+
+    /* What it counts */
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .card { background: var(--bg); border: 2px solid var(--edge); border-radius: 16px; padding: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 16px; }
+    .dots { display: flex; gap: 5px; margin-bottom: 12px; }
+    .dots i { width: 16px; height: 16px; border-radius: 50%; display: block; border: 2px solid var(--edge); }
+
+    /* Grown-ups */
+    .parents { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; }
+    .parents ul.ticks { margin: 0; }
+
+    /* Plans */
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .plan { background: var(--surface); border: 2px solid var(--edge); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; }
+    .plan h3 { font-size: 24px; }
+    .plan .price { margin: 6px 0 4px; display: inline-block; align-self: flex-start; background: var(--gold-light); border: 3px solid var(--gold-deep); color: var(--navy); border-radius: 14px; padding: 6px 14px; font-weight: 800; font-size: 26px; font-variant-numeric: tabular-nums; }
+    .plan .price small { font-size: 16px; font-weight: 700; }
+    .plan .sub { color: var(--muted); margin: 6px 0 0; }
+    .plan ul.ticks { flex: 1; }
+    .plan .fine { color: var(--muted); font-size: 15px; margin: 16px 0 0; }
+
+    .cta { background: var(--navy); color: var(--white); text-align: center; }
+    .cta h2 { color: var(--white); }
+    .cta p { color: var(--mist); margin: 0 0 24px; font-size: 19px; }
+
+    footer { padding: 32px 0 48px; border-top: 1px solid var(--edge); }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 14px; }
+    footer nav a { font-weight: 700; display: inline-block; padding: 10px 0; }
+    footer p { color: var(--muted); margin: 4px 0; font-size: 15px; }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
     }
-    .open:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-    footer { border-top: 1px solid var(--edge); margin-top: 40px; padding-top: 16px; }
-    td:first-child { font-weight: 700; }
-    table.who td:first-child { font-weight: inherit; }
-    @media (max-width: 520px) {
-      th, td { display: block; padding: 4px 0; border: 0; }
-      tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--edge); }
-      table.kv thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-      table.who td::before { content: attr(data-label); display: block; font-weight: 700; }
-      table.who thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    @media (max-width: 760px) {
+      .band .tag { display: none; }
+      .hero .wrap { grid-template-columns: 1fr; padding-top: 36px; padding-bottom: 56px; gap: 28px; }
+      .phones { min-height: 0; }
+      .phones .phone.back { display: none; }
+      .phones .phone.front { margin-left: 0; transform: none; width: 250px; }
+      .step, .parents, .plans { grid-template-columns: 1fr; gap: 24px; }
+      .step:nth-of-type(even) .shot { order: 0; }
+      .step .phone { width: 240px; }
+      section { padding: 48px 0; }
+    }
+    @media (max-width: 420px) {
+      .grid { gap: 10px; }
+      .card { padding: 14px; }
+      .card h3 { font-size: 17px; }
+      .card p { font-size: 15px; }
+      .band .btn { padding: 8px 12px; }
+      .word { font-size: 21px; }
+      .actions .btn { width: 100%; }
+    }
+    @media (max-width: 340px) {
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to the main content</a>
   <header class="band">
-    <div class="band-inner">
-      <svg width="48" height="48" viewBox="0 0 512 512" aria-hidden="true">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="TinkerTill home">
+        <svg width="44" height="44" viewBox="0 0 512 512" aria-hidden="true">
         <rect width="512" height="512" rx="112" fill="#0F1B2D" stroke="#2A3B57" stroke-width="10"/>
         <g fill="#4C7DFF">
           <rect x="238" y="72" width="36" height="66" rx="10"/><rect x="238" y="72" width="36" height="66" rx="10" transform="rotate(36 256 256)"/>
@@ -96,37 +192,174 @@
           <rect x="237" y="306" width="38" height="20" rx="6"/>
         </g>
       </svg>
-      <div>
-        <div class="word">Tinker<span>Till</span></div>
-        <div class="tag">Price it. Sell it. Keep it.</div>
-      </div>
+        <span>
+          <span class="word">Tinker<span>Till</span></span><br>
+          <span class="tag">Price it. Sell it. Keep it.</span>
+        </span>
+      </a>
+      <a class="btn primary" href="app/">Open TinkerTill</a>
     </div>
   </header>
 
-  <main>
-    <h1>TinkerTill</h1>
-    <p class="lead">Price it. Sell it. Keep it. TinkerTill helps kids and teens work out what a 3D print costs to make, what to charge for it, and how their little shop is doing, with grown-ups in charge of accounts and payments.</p>
-    <p><a class="open" href="app/">Open TinkerTill</a></p>
-    <p class="note">Works in your web browser on a computer, tablet or phone. Pricing a print is free, with no account.</p>
-    <nav class="toc" aria-label="Pages">
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="terms-of-use.html">Terms of use</a>
-      <a href="delete-account.html">Delete your account or data</a>
-    </nav>
-    <footer>
-      <p>Questions? <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
-      <p class="note">TinkerTill</p>
-    </footer>
+  <main id="main">
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Know what your 3D prints cost. <em>Charge the right price.</em></h1>
+          <p class="lead">TinkerTill helps kids and teens who 3D print work out what each print costs to make, what to charge for it, and how their little shop is doing, with grown-ups in charge.</p>
+          <div class="actions">
+            <a class="btn primary" href="app/">Open TinkerTill</a>
+            <a class="btn ghost" href="#how">See how it works</a>
+          </div>
+          <p class="note">Free to price your prints, right in your browser. No account or download needed. iPhone, iPad and Android apps coming soon.</p>
+        </div>
+        <div class="phones" aria-hidden="true">
+          <div class="phone back"><img src="images/app-shop.jpg" width="780" height="1520" alt=""></div>
+          <div class="phone front"><img src="images/app-price.jpg" width="780" height="1520" alt=""></div>
+        </div>
+      </div>
+      <div class="layers" aria-hidden="true"><i style="width:220px"></i><i style="width:170px"></i><i style="width:120px"></i></div>
+    </div>
+
+    <section id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <span class="kicker">How it works</span>
+        <h2 id="how-title">Three steps, one little shop</h2>
+        <p class="intro">Big buttons, plain words, and Undo when you change your mind. Built so a 12-year-old can use it without help.</p>
+
+        <div class="step">
+          <div>
+            <span class="kicker">Step 1</span>
+            <h2><em>Price it.</em></h2>
+            <p>Add the filament colors you used, the grams, and how long the print takes. TinkerTill adds up everything it really cost and suggests an easy-to-say price.</p>
+            <ul class="ticks">
+              <li>Pick a price style: Friends price, Fair price or Shop price.</li>
+              <li>See it in plain words: "It costs you <span class="money">$2.41</span> to make. Sell it for <span class="money">$6.50</span> to earn <span class="money">$4.09</span>."</li>
+              <li>Selling a lot at once? Get a wholesale price that still earns money.</li>
+            </ul>
+          </div>
+          <div class="shot"><div class="phone"><img src="images/app-price.jpg" width="780" height="1520" loading="lazy" alt="The Price it screen for a dragon fidget keychain: sell it for $6.50, costs $2.41 to make."></div></div>
+        </div>
+
+        <div class="step">
+          <div>
+            <span class="kicker">Step 2</span>
+            <h2><em>Sell it.</em></h2>
+            <p>Keep track of who ordered what, what's been made, paid for and handed over, so nothing gets forgotten.</p>
+            <ul class="ticks">
+              <li>Orders with a name, a note and every print in them.</li>
+              <li>See your sales and what you really earned, in big, simple totals.</li>
+              <li>Know how many of each piece you have ready on the shelf.</li>
+            </ul>
+          </div>
+          <div class="shot"><div class="phone"><img src="images/app-orders.jpg" width="780" height="1520" loading="lazy" alt="The Orders part of My shop, with orders for Maya and Jordan."></div></div>
+        </div>
+
+        <div class="step">
+          <div>
+            <span class="kicker">Step 3</span>
+            <h2><em>Keep it.</em></h2>
+            <p>Every print you price is saved in My prints, with its price, colors and store links. Open it again, or copy it for a new color.</p>
+            <ul class="ticks">
+              <li>My filament keeps your spools and their prices, so you never type them twice.</li>
+              <li>Track how much filament is left on each spool.</li>
+              <li>Add-ons like keyrings and magnets, with their own prices.</li>
+            </ul>
+          </div>
+          <div class="shot"><div class="phone"><img src="images/app-prints.jpg" width="780" height="1520" loading="lazy" alt="My prints, with four saved prints and their prices."></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" aria-labelledby="counts-title">
+      <div class="wrap">
+        <span class="kicker">Every cost counts</span>
+        <h2 id="counts-title">The things most price guesses forget</h2>
+        <p class="intro">A print costs more than its filament. TinkerTill adds the rest, so a sale really earns money.</p>
+        <div class="grid">
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#1E1E1E"></i><i style="background:#D4A017"></i><i style="background:#8A4FD8"></i></div><h3>Filament by color</h3><p>Each color with its own spool price and grams.</p></div>
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#4C7DFF"></i><i style="background:#F4F4F4"></i></div><h3>Color swaps</h3><p>The leftover filament every color change wastes.</p></div>
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#EB5757"></i></div><h3>Oops prints</h3><p>Some prints fail. A small allowance covers them.</p></div>
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#FFC83D"></i></div><h3>Electricity</h3><p>From your printer's power and how long it runs.</p></div>
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#B8C2DA"></i></div><h3>Printer wear</h3><p>Nozzles and parts wear out. A little goes into each print.</p></div>
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#27AE60"></i></div><h3>Your time</h3><p>Cleaning up and packing a print is work too.</p></div>
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#FFD95E"></i><i style="background:#E5A100"></i></div><h3>Add-ons</h3><p>Keyrings, magnets and clickers, at the price you paid.</p></div>
+          <div class="card"><div class="dots" aria-hidden="true"><i style="background:#4C7DFF"></i><i style="background:#FFC83D"></i><i style="background:#27AE60"></i></div><h3>Many currencies</h3><p>Dollars, pounds, euros, dirhams, riyals and more.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="parents-title">
+      <div class="wrap">
+        <span class="kicker">For grown-ups</span>
+        <h2 id="parents-title">Made for kids, run by parents</h2>
+        <p class="intro">Kids get a tool that feels like theirs. Parents stay in charge of accounts and payments.</p>
+        <div class="parents">
+          <ul class="ticks">
+            <li>Only a parent or guardian (18+) can make an account. Kids never give an email, phone number, birthday, photo or location.</li>
+            <li>A parent PIN is needed before TinkerTill opens any website or makes a purchase.</li>
+            <li>Up to 3 kid profiles in one family, each with their own prints and shop.</li>
+          </ul>
+          <ul class="ticks">
+            <li>No ads, no tracking, and we never sell anyone's information.</li>
+            <li>Download or delete your family's information any time, right in the app.</li>
+            <li>Built to work with screen readers, larger text and keyboards.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" aria-labelledby="plans-title">
+      <div class="wrap">
+        <span class="kicker">Plans</span>
+        <h2 id="plans-title">Free to price. One plan for the whole family.</h2>
+        <p class="intro">No pop-ups and no pressure. Start free, and add the Family plan when your shop needs it.</p>
+        <div class="plans">
+          <div class="plan">
+            <h3>Price it</h3>
+            <div class="price">Free</div>
+            <p class="sub">No account needed.</p>
+            <ul class="ticks">
+              <li>The full price calculator, with every cost above.</li>
+              <li>Friends, Fair and Shop prices, and wholesale prices.</li>
+              <li>Your filament and settings, kept on your device.</li>
+            </ul>
+            <p><a class="btn primary" href="app/">Open TinkerTill</a></p>
+          </div>
+          <div class="plan">
+            <h3>Family plan</h3>
+            <div class="price">$2.99 <small>a month</small></div>
+            <p class="sub">or $29.99 a year (about 2 months free). Every new family gets a 1-month free trial.</p>
+            <ul class="ticks">
+              <li>My prints: save prints and open them again, with store links.</li>
+              <li>My shop: orders, sales and stock.</li>
+              <li>Up to 3 kids, a second grown-up, and syncing on every device and this website.</li>
+            </ul>
+            <p class="fine">Start the free trial in the TinkerTill app for iPhone, iPad or Android (coming soon). Then sign in here with the same parent account. Cancel any time where you subscribed. US prices; the stores show your local price.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <h2 id="cta-title">Ready to price your first print?</h2>
+        <p>It takes about a minute. No account needed.</p>
+        <a class="btn primary" href="app/">Open TinkerTill</a>
+      </div>
+    </section>
   </main>
-<script>
-  // Email links that land here by mistake (old Site URL) go on to the right page, keeping the link details.
-  (function () {
-    var h = location.hash;
-    if (/(^|[#&])(access_token|error)=/.test(h)) {
-      var page = /[#&]type=recovery(&|$)/.test(h) ? 'reset-password.html' : 'confirmed.html';
-      location.replace(page + h);
-    }
-  })();
-</script>
+
+  <footer>
+    <div class="wrap">
+      <nav aria-label="Policies and help">
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-of-use.html">Terms of use</a>
+        <a href="delete-account.html">Delete your account or data</a>
+      </nav>
+      <p>Questions or ideas? <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
+      <p>© 2026 TinkerTill</p>
+    </div>
+  </footer>
 </body>
 </html>

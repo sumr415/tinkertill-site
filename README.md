@@ -6,6 +6,7 @@ The public web pages for the TinkerTill app, served with GitHub Pages at
 
 | Page | Link | Used for |
 |---|---|---|
+| Home page | https://tinkertill.com/ | What TinkerTill does, with screenshots (`images/`, made from the App Store screenshots) and Montserrat web fonts (`fonts/`, SIL Open Font License) |
 | The TinkerTill web app | https://tinkertill.com/app/ | Built in the app repository with `npm run build:web -- ../tinkertill-site`; don't edit `app/` by hand |
 | Delete your account or data | https://tinkertill.com/delete-account.html | Google Play: Delete account URL |
 | Delete only some data | https://tinkertill.com/delete-account.html#delete-data | Google Play: Delete data URL |
