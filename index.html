@@ -11,12 +11,12 @@
     :root {
       --navy: #0F1B2D; --navy-edge: #2A3B57; --gold: #FFC83D; --gold-light: #FFD95E; --mist: #B8C2DA;
       --bg: #0F1B2D; --surface: #16243A; --edge: #2A3B57; --text: #FFFFFF; --muted: #B8C2DA;
-      --link: #FFD95E; --focus: #FFD95E; --step-bg: #FFD95E; --step-text: #0F1B2D;
+      --link: #FFD95E; --focus: #FFD95E; --step-bg: #FFD95E; --step-text: #0F1B2D; --btn-bg: #3461D9;
     }
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #FFFFFF; --surface: #F2F5FB; --edge: #CBD4E6; --text: #0F1B2D; --muted: #4A5875;
-        --link: #3461D9; --focus: #3461D9; --step-bg: #FFE08A; --step-text: #0F1B2D;
+        --link: #3461D9; --focus: #3461D9; --step-bg: #FFE08A; --step-text: #0F1B2D; --btn-bg: #3461D9;
       }
     }
     * { box-sizing: border-box; }
@@ -58,6 +58,11 @@
       display: inline-block; min-height: 48px; padding: 12px 16px; border: 2px solid var(--edge);
       border-radius: 12px; text-decoration: none; font-weight: 700; background: var(--surface);
     }
+    .open {
+      display: inline-flex; align-items: center; min-height: 56px; padding: 14px 24px; margin: 8px 0 6px;
+      border-radius: 14px; background: var(--btn-bg); color: #FFFFFF; font-weight: 800; font-size: 19px; text-decoration: none;
+    }
+    .open:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
     footer { border-top: 1px solid var(--edge); margin-top: 40px; padding-top: 16px; }
     td:first-child { font-weight: 700; }
     table.who td:first-child { font-weight: inherit; }
@@ -100,6 +105,8 @@
   <main>
     <h1>TinkerTill</h1>
     <p class="lead">Price it. Sell it. Keep it. TinkerTill helps kids and teens work out what a 3D print costs to make, what to charge for it, and how their little shop is doing, with grown-ups in charge of accounts and payments.</p>
+    <p><a class="open" href="app/">Open TinkerTill</a></p>
+    <p class="note">Works in your web browser on a computer, tablet or phone. Pricing a print is free, with no account.</p>
     <nav class="toc" aria-label="Pages">
       <a href="privacy-policy.html">Privacy policy</a>
       <a href="terms-of-use.html">Terms of use</a>
