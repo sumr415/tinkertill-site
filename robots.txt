@@ -1,0 +1,5 @@
+# TinkerTill: https://tinkertill.com
+User-agent: *
+Allow: /
+
+Sitemap: https://tinkertill.com/sitemap.xml

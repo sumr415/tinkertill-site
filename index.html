@@ -5,11 +5,131 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
-  <title>TinkerTill: 3D print pricing for young makers</title>
-  <meta name="description" content="TinkerTill helps kids and teens who 3D print work out what each print costs to make, what to charge, and how their little shop is doing. Free to price prints, right in your browser.">
-  <meta property="og:title" content="TinkerTill: Price it. Sell it. Keep it.">
-  <meta property="og:description" content="3D print pricing for kids and teens, with grown-ups in charge.">
-  <meta property="og:image" content="https://tinkertill.com/images/app-price.jpg">
+  <title>3D Print Price Calculator for Kids &amp; Teens | TinkerTill</title>
+  <meta name="description" content="Free 3D print price calculator for young makers. Add filament, color swaps, electricity, printer wear and failed prints, then get a fair price to sell your 3D prints.">
+  <link rel="canonical" href="https://tinkertill.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TinkerTill">
+  <meta property="og:url" content="https://tinkertill.com/">
+  <meta property="og:title" content="TinkerTill: 3D print price calculator for young makers">
+  <meta property="og:description" content="Work out what each 3D print costs to make and what to charge. Free in your browser, with grown-ups in charge.">
+  <meta property="og:image" content="https://tinkertill.com/images/social-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TinkerTill, the 3D print price calculator for young makers, showing a keychain priced at $6.50.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://tinkertill.com/#org",
+  "name": "TinkerTill",
+  "url": "https://tinkertill.com/",
+  "logo": "https://tinkertill.com/favicon.png",
+  "email": "thetinkertill@gmail.com"
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://tinkertill.com/#site",
+  "name": "TinkerTill",
+  "url": "https://tinkertill.com/",
+  "publisher": {
+   "@id": "https://tinkertill.com/#org"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TinkerTill",
+  "url": "https://tinkertill.com/app/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "description": "A 3D print price calculator and little-shop tracker for kids and teens, with parents in charge.",
+  "image": "https://tinkertill.com/images/social-1200x630.jpg",
+  "publisher": {
+   "@id": "https://tinkertill.com/#org"
+  },
+  "offers": [
+   {
+    "@type": "Offer",
+    "name": "Price it",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "Offer",
+    "name": "Family plan (monthly)",
+    "price": "2.99",
+    "priceCurrency": "USD"
+   },
+   {
+    "@type": "Offer",
+    "name": "Family plan (yearly)",
+    "price": "29.99",
+    "priceCurrency": "USD"
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How do I price a 3D print?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Add up what the print really costs to make: the filament for each color, the leftover filament from color swaps, electricity, printer wear, an allowance for failed prints, any add-ons, and your time. Then multiply that cost to get a selling price. TinkerTill does the math for you and rounds it to an easy-to-say price."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much should I charge for a 3D print?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A simple rule is 2 to 3 times what it costs you to make. TinkerTill's Friends price is 2 times the cost, Fair price is 2.5 times and Shop price is 3 times. For big orders it suggests a wholesale price of about half the Shop price, never below 1.5 times the cost of making the batch."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I work out the filament cost of a 3D print?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Divide the spool price by its weight in grams, then multiply by the grams your slicer says the print uses. A $18 spool of 1,000 grams is 1.8 cents a gram, so a 32-gram print uses about 58 cents of filament. TinkerTill does this for every color you add."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What costs do people forget when pricing 3D prints?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Color swaps waste filament, some prints fail, the printer uses electricity, nozzles and parts wear out, and cleaning up and packing a print takes time. Leaving these out is the most common reason a 3D print sells for less than it really cost."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is TinkerTill free?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Pricing your prints is free, right in your web browser, with no account. The optional Family plan ($2.99 a month or $29.99 a year, with a 1-month free trial) adds saving prints, orders and sales, up to 3 kids and syncing on every device."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is TinkerTill safe for kids?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "TinkerTill is made for kids and teens, with parents in charge. Only a parent or guardian can make an account, kids never give an email or other contact details, a parent PIN is needed before any link out or purchase, and there are no ads or tracking."
+    }
+   }
+  ]
+ }
+]
+  </script>
   <meta name="theme-color" content="#0F1B2D">
   <script>
     // Email links that land here by mistake (old Site URL) go on to the right page, keeping the link details.
@@ -78,6 +198,7 @@
     /* Hero: navy in both themes, like the app's brand band. */
     .hero { background: radial-gradient(ellipse at 75% 40%, #1B2C48 0%, #0F1B2D 65%); color: var(--white); overflow: hidden; position: relative; }
     .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; padding-top: 56px; padding-bottom: 64px; position: relative; }
+    .hero .eyebrow { display: inline-block; margin: 0 0 14px; padding: 6px 12px; border-radius: 999px; background: rgba(255,200,61,.14); color: var(--gold); font-weight: 800; font-size: 15px; }
     .hero h1 { font-weight: 800; font-size: clamp(34px, 5vw, 54px); line-height: 1.1; letter-spacing: -0.5px; margin: 0 0 16px; }
     .hero h1 em { font-style: normal; color: var(--gold); }
     .hero .lead { font-size: 19px; color: var(--mist); margin: 0 0 26px; max-width: 34em; }
@@ -133,6 +254,14 @@
     .plan ul.ticks { flex: 1; }
     .plan .fine { color: var(--muted); font-size: 15px; margin: 16px 0 0; }
 
+    .faq { max-width: 820px; }
+    .faq details { border: 2px solid var(--edge); border-radius: 14px; background: var(--surface); margin: 10px 0; }
+    .faq summary { cursor: pointer; padding: 16px 18px; font-weight: 800; font-size: 18px; list-style: none; min-height: 48px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; float: right; font-size: 22px; line-height: 1; color: var(--link); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 12px; }
+    .faq details p { margin: 0; padding: 0 18px 18px; color: var(--muted); }
     .cta { background: var(--navy); color: var(--white); text-align: center; }
     .cta h2 { color: var(--white); }
     .cta p { color: var(--mist); margin: 0 0 24px; font-size: 19px; }
@@ -205,6 +334,7 @@
     <div class="hero">
       <div class="wrap">
         <div>
+          <p class="eyebrow">Free 3D print price calculator for young makers</p>
           <h1>Know what your 3D prints cost. <em>Charge the right price.</em></h1>
           <p class="lead">TinkerTill helps kids and teens who 3D print work out what each print costs to make, what to charge for it, and how their little shop is doing, with grown-ups in charge.</p>
           <div class="actions">
@@ -225,7 +355,7 @@
       <div class="wrap">
         <span class="kicker">How it works</span>
         <h2 id="how-title">Three steps, one little shop</h2>
-        <p class="intro">Big buttons, plain words, and Undo when you change your mind. Built so a 12-year-old can use it without help.</p>
+        <p class="intro">Big buttons, plain words, and Undo when you change your mind. Built so a 12-year-old can use this 3D printing cost calculator without help.</p>
 
         <div class="step">
           <div>
@@ -337,6 +467,39 @@
             </ul>
             <p class="fine">Start the free trial in the TinkerTill app for iPhone, iPad or Android (coming soon). Then sign in here with the same parent account. Cancel any time where you subscribed. US prices; the stores show your local price.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="faq-title">
+      <div class="wrap">
+        <span class="kicker">Questions</span>
+        <h2 id="faq-title">Pricing 3D prints: common questions</h2>
+        <div class="faq">
+          <details>
+            <summary>How do I price a 3D print?</summary>
+            <p>Add up what the print really costs to make: the filament for each color, the leftover filament from color swaps, electricity, printer wear, an allowance for failed prints, any add-ons, and your time. Then multiply that cost to get a selling price. TinkerTill does the math for you and rounds it to an easy-to-say price.</p>
+          </details>
+          <details>
+            <summary>How much should I charge for a 3D print?</summary>
+            <p>A simple rule is 2 to 3 times what it costs you to make. TinkerTill's Friends price is 2 times the cost, Fair price is 2.5 times and Shop price is 3 times. For big orders it suggests a wholesale price of about half the Shop price, never below 1.5 times the cost of making the batch.</p>
+          </details>
+          <details>
+            <summary>How do I work out the filament cost of a 3D print?</summary>
+            <p>Divide the spool price by its weight in grams, then multiply by the grams your slicer says the print uses. A $18 spool of 1,000 grams is 1.8 cents a gram, so a 32-gram print uses about 58 cents of filament. TinkerTill does this for every color you add.</p>
+          </details>
+          <details>
+            <summary>What costs do people forget when pricing 3D prints?</summary>
+            <p>Color swaps waste filament, some prints fail, the printer uses electricity, nozzles and parts wear out, and cleaning up and packing a print takes time. Leaving these out is the most common reason a 3D print sells for less than it really cost.</p>
+          </details>
+          <details>
+            <summary>Is TinkerTill free?</summary>
+            <p>Yes. Pricing your prints is free, right in your web browser, with no account. The optional Family plan ($2.99 a month or $29.99 a year, with a 1-month free trial) adds saving prints, orders and sales, up to 3 kids and syncing on every device.</p>
+          </details>
+          <details>
+            <summary>Is TinkerTill safe for kids?</summary>
+            <p>TinkerTill is made for kids and teens, with parents in charge. Only a parent or guardian can make an account, kids never give an email or other contact details, a parent PIN is needed before any link out or purchase, and there are no ads or tracking.</p>
+          </details>
         </div>
       </div>
     </section>
