@@ -147,7 +147,7 @@
 
     <footer>
       <p>Need help? <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
-      <p class="note">TinkerTill · <a href="privacy-policy.html">Privacy policy</a> · <a href="terms-of-use.html">Terms of use</a></p>
+      <p class="note">TinkerTill · <a href="privacy-policy">Privacy policy</a> · <a href="terms-of-use">Terms of use</a></p>
     </footer>
   </main>
   <script>
@@ -157,7 +157,7 @@
       var hash = new URLSearchParams(location.hash.slice(1));
       var query = new URLSearchParams(location.search);
       // A password reset link that landed here by mistake: send it to the right page.
-      if (hash.get('type') === 'recovery') { location.replace('reset-password.html' + location.hash); return; }
+      if (hash.get('type') === 'recovery') { location.replace('reset-password' + location.hash); return; }
       if (location.hash || location.search) history.replaceState(null, '', location.pathname);
       var error = hash.get('error_description') || query.get('error_description');
       if (error || hash.get('error') || query.get('error')) {

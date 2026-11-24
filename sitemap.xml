@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tinkertill.com/</loc><lastmod>2026-11-23</lastmod><priority>1.0</priority></url>
-  <url><loc>https://tinkertill.com/app/</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
-  <url><loc>https://tinkertill.com/privacy-policy.html</loc><lastmod>2026-11-23</lastmod><priority>0.3</priority></url>
-  <url><loc>https://tinkertill.com/terms-of-use.html</loc><lastmod>2026-11-23</lastmod><priority>0.3</priority></url>
-  <url><loc>https://tinkertill.com/delete-account.html</loc><lastmod>2026-11-23</lastmod><priority>0.2</priority></url>
+  <url><loc>https://tinkertill.com/</loc><lastmod>2026-11-24</lastmod><priority>1.0</priority></url>
+  <url><loc>https://tinkertill.com/app/</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tinkertill.com/privacy-policy</loc><lastmod>2026-11-24</lastmod><priority>0.3</priority></url>
+  <url><loc>https://tinkertill.com/terms-of-use</loc><lastmod>2026-11-24</lastmod><priority>0.3</priority></url>
+  <url><loc>https://tinkertill.com/delete-account</loc><lastmod>2026-11-24</lastmod><priority>0.2</priority></url>
 </urlset>

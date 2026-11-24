@@ -136,7 +136,7 @@
     (function () {
       var h = location.hash;
       if (/(^|[#&])(access_token|error)=/.test(h)) {
-        var page = /[#&]type=recovery(&|$)/.test(h) ? 'reset-password.html' : 'confirmed.html';
+        var page = /[#&]type=recovery(&|$)/.test(h) ? 'reset-password' : 'confirmed';
         location.replace(page + h);
       }
     })();
@@ -516,9 +516,9 @@
   <footer>
     <div class="wrap">
       <nav aria-label="Policies and help">
-        <a href="privacy-policy.html">Privacy policy</a>
-        <a href="terms-of-use.html">Terms of use</a>
-        <a href="delete-account.html">Delete your account or data</a>
+        <a href="privacy-policy">Privacy policy</a>
+        <a href="terms-of-use">Terms of use</a>
+        <a href="delete-account">Delete your account or data</a>
       </nav>
       <p>Questions or ideas? <a href="mailto:thetinkertill@gmail.com">thetinkertill@gmail.com</a></p>
       <p>© 2026 TinkerTill</p>
